@@ -107,6 +107,7 @@ export const ControlProvider: FC<Props> = ({ children }) => {
       )
       setFilterExpenses(expensesFiltred)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter])
 
   const addBudget = (newBudget: NewBudgetInt) => {

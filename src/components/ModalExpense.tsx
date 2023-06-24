@@ -1,8 +1,7 @@
-import { useEffect } from 'react'
 import { useControl } from '../hooks'
 
 export const ModalExpense = () => {
-  const { handleCloseModal, addExpenses, isEdit, editingExpense } = useControl()
+  const { handleCloseModal, addExpenses, isEdit } = useControl()
 
   // useEffect(() => {
   //   if (editingExpense != null) {

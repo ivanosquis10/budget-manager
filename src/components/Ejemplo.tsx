@@ -17,7 +17,7 @@ const Ejemplo = () => {
       setStrokeDasharray(`${percent},100`)
       setPrevPercent(percent)
     }
-  }, [percent])
+  }, [percent, prevPercent])
 
   return (
     <div className='flex flex-row'>

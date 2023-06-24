@@ -20,6 +20,7 @@ export const useBudget = () => {
     setAvailable(totalAvailable)
     setSpent(totalSpent)
     setPercent(Number(newPercent))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expenses])
 
   return {
