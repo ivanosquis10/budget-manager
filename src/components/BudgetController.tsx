@@ -7,9 +7,9 @@ export const BudgetController = () => {
     isValidBudget
       ? (
         <ExpenseDashboard />
-      )
+        )
       : (
         <NewBudget />
-      )
+        )
   )
 }
