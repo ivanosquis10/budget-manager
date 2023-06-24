@@ -27,7 +27,7 @@ export const NewBudget = () => {
   }
 
   return (
-    <div className='flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8'>
+    <div className='h-screen flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8'>
       <div className='sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center'>
         <Logo />
         <h2 className='mt-5 text-center text-2xl font-bold leading-9 tracking-tight '>
@@ -35,7 +35,7 @@ export const NewBudget = () => {
         </h2>
       </div>
 
-      <div className='mt-10 sm:mx-auto w-full sm:max-w-sm'>
+      <div className='mt-10 sm:mx-auto w-full sm:max-w-lg p-1'>
         <form onSubmit={handleSubmit} className='space-y-6'>
           <div>
             <label htmlFor='name' className='capitalize block font-medium leading-6 '>

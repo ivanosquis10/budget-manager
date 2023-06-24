@@ -1,4 +1,4 @@
-export const Logo = ({ w = 60, h = 60 }: { w?: number, h?: number }) => {
+export const Logo = ({ w = 70, h = 70 }: { w?: number, h?: number }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -29,17 +29,6 @@ export const Logo = ({ w = 60, h = 60 }: { w?: number, h?: number }) => {
   )
 }
 
-export const NotificacionIcon = () => {
-  return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg' width='25'
-      height='25' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor'
-    >
-      <path strokeLinecap='round' strokeLinejoin='round' d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0' />
-    </svg>
-  )
-}
-
 export const AddExpensesIcon = () => {
   return (
     <svg width='28px' height='28px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='SVGRepo_bgCarrier' strokeWidth='0' /><g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round' /><g id='SVGRepo_iconCarrier'> <path d='M8 12H16' stroke='#ffffff' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' /> <path d='M12 16V8' stroke='#ffffff' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' /> <path d='M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z' stroke='#ffffff' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' /> </g></svg>
@@ -55,5 +44,11 @@ export const AddGrid = () => {
 export const MenuIcon = () => {
   return (
     <svg width='25px' height='25px' strokeWidth='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='#ffffff'><path d='M3 5h18M3 12h18M3 19h18' stroke='#ffffff' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' /></svg>
+  )
+}
+
+export const LogoutIcon = () => {
+  return (
+    <svg width='28px' height='28px' strokeWidth='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='#ffffff'><path d='M12 12h7m0 0l-3 3m3-3l-3-3M19 6V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-1' stroke='#ffffff' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' /></svg>
   )
 }

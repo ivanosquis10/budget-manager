@@ -165,6 +165,15 @@ export const ControlProvider: FC<Props> = ({ children }) => {
     setMenuOpen(!menuOpen)
   }
 
+  const resetApp = () => {
+    const areYouSure = confirm('Are you sure you want to restart everything?')
+    if (areYouSure) {
+      setBudget({ name: '', budget: 0 })
+      setExpenses([])
+      setIsValidBudget(false)
+    }
+  }
+
   return (
     <ControlContext.Provider value={{
       // properties
@@ -187,7 +196,8 @@ export const ControlProvider: FC<Props> = ({ children }) => {
       deleteExpense,
       editExpense,
       filterExpensesByCategory,
-      handleMenuToggle
+      handleMenuToggle,
+      resetApp
     }}
     >
       {children}
