@@ -158,6 +158,7 @@ export const ControlProvider: FC<Props> = ({ children }) => {
 
   const handleOpenModal = () => {
     setModal(true)
+    setMenuOpen(false)
   }
 
   const handleMenuToggle = () => {

@@ -47,7 +47,7 @@ export const ModalExpense = () => {
   }
 
   return (
-    <div className='flex items-center justify-center absolute top-0 left-0 w-full h-full bg-slate-900/20 p-10 backdrop-blur'>
+    <div className='flex items-center justify-center fixed z-50 top-0 left-0 w-full h-screen bg-slate-900/20 p-10 backdrop-blur'>
       <form onSubmit={handleSubmitAdd} className='overflow-hidden w-full md:w-1/2 bg-shark-950 shadow shadow-shark-500/50 p-5 rounded'>
         <h3 className='text-3xl font-bold mb-5 uppercase text-center'>{!isEdit ? 'Add an expense' : 'Edit an expense'} </h3>
         <div className='mb-6'>
