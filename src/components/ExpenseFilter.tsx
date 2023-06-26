@@ -1,5 +1,5 @@
-import { CategoriesExpenses } from '../context'
 import { useControl } from '../hooks'
+import type { CategoriesExpenses } from '../interfaces'
 
 export const ExpenseFilter = () => {
   const { filter, filterExpensesByCategory } = useControl()

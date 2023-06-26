@@ -9,7 +9,6 @@ export const useBudget = () => {
 
   // usaremos un reducer para llevar todo el calculo necesario
   useEffect(() => {
-    // console.log(expenses, budget)
     const totalSpent = expenses.reduce((total, spent) => spent.amount + total, 0)
 
     const totalAvailable = budget.budget - totalSpent

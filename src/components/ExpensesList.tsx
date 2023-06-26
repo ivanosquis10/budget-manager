@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/indent */
 import { useControl } from '../hooks'
-// import { formatDate } from '../utils'
-
 import { Expense } from '.'
 
 export const ExpensesList = () => {

@@ -1,5 +1,5 @@
-import { AddGrid } from '.'
 import { useControl } from '../hooks'
+import { AddGrid } from '.'
 
 export const AsideNavbar = () => {
   const { handleOpenModal, linksNav } = useControl()

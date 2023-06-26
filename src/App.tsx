@@ -5,9 +5,9 @@ import { BudgetController } from './components/BudgetController'
 export const App = () => {
   const { modal } = useControl()
   return (
-    <>
+    <main>
       <BudgetController />
       {modal && <ModalExpense />}
-    </>
+    </main>
   )
 }

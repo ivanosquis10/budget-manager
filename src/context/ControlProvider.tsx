@@ -1,24 +1,9 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { ControlContext } from './ControlContext'
-import { NewBudgetInt } from '../interfaces'
+import type { NewBudgetInt, ExpensesType, LinksNavType, CategoriesExpenses } from '../interfaces'
 
 interface Props {
   children: ReactNode
-}
-
-export interface ExpensesType {
-  id?: string
-  name: string
-  amount: number
-  category: string
-  date?: number
-}
-
-export type CategoriesExpenses = 'all' | 'savings' | 'food' | 'house' | 'expenses' | 'entertainment' | 'health' | 'subscriptions'
-export interface LinksNavType {
-  id: string
-  name: string
-  icon: string
 }
 
 const linksNav: LinksNavType[] = [

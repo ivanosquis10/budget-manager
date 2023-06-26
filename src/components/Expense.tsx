@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { ExpensesType } from '../context'
 import { useControl } from '../hooks'
+import type { ExpensesType } from '../interfaces'
 
 interface Props {
   expense: ExpensesType

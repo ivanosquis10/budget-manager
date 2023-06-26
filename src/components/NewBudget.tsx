@@ -1,6 +1,6 @@
 import { useControl } from '../hooks/useControl'
-import { NewBudgetInt } from '../interfaces'
 import { Logo } from '.'
+import type { NewBudgetInt } from '../interfaces'
 
 export const NewBudget = () => {
   const { addBudget } = useControl()

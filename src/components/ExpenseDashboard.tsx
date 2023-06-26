@@ -1,24 +1,19 @@
 
 import { useControl, useBudget } from '../hooks'
-import { ExpenseFilter, Header, ProgressBar } from '.'
+import { ExpenseFilter, Header, ProgressBar, AsideNavbar, MobileMenu, ExpensesList } from '.'
 import { formatMoney } from '../utils'
-import { ExpensesList } from './'
-import { AsideNavbar } from './AsideNavbar'
-import { Drawer } from './Drawer'
 
 export const ExpenseDashboard = () => {
   const { budget, menuOpen } = useControl()
   const { spent, available } = useBudget()
   return (
-    <main className='h-screen w-full grid grid-cols-6'>
-
-      {/* <AsideNavbar /> */}
+    <div className='h-screen w-full grid grid-cols-6'>
       <aside className='hidden bg-shark-950 px-2 py-5 lg:block lg:col-span-1'>
         <AsideNavbar />
       </aside>
-      {menuOpen && <Drawer />}
+      {menuOpen && <MobileMenu />}
 
-      <div className='col-span-6 lg:col-span-5 bg-shark-900'>
+      <section className='col-span-6 lg:col-span-5 bg-shark-900'>
         <Header />
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-2 p-5'>
 
@@ -47,7 +42,7 @@ export const ExpenseDashboard = () => {
           </div>
 
         </div>
-        {/* {barra} */}
+
         <section className='grid grid-cols-1 lg:grid-cols-2 px-5'>
           <div className='p-1'>
             <h2 className='block mb-2 text-base font-medium text-white capitalize'>Your spending progress</h2>
@@ -59,7 +54,7 @@ export const ExpenseDashboard = () => {
           </div>
         </section>
 
-      </div>
-    </main>
+      </section>
+    </div>
   )
 }

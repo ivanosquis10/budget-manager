@@ -1,6 +1,6 @@
 
-import { LogoutIcon, MenuIcon } from '.'
 import { useControl } from '../hooks'
+import { LogoutIcon, MenuIcon } from '.'
 export const Header = () => {
   const { budget, handleMenuToggle, resetApp } = useControl()
   return (

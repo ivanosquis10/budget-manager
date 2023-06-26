@@ -3,29 +3,9 @@ import { useControl } from '../hooks'
 export const ModalExpense = () => {
   const { handleCloseModal, addExpenses, isEdit } = useControl()
 
-  // useEffect(() => {
-  //   if (editingExpense != null) {
-  //     if (Object.keys(editingExpense).length > 0) {
-  //       const { name, amount, category } = editingExpense
-
-  //       // Establecer los valores de los campos del formulario
-  //       const nameInput = document.getElementById('name') as HTMLInputElement
-  //       nameInput.setAttribute('value', name)
-
-  //       const amountInput = document.getElementById('amount') as HTMLInputElement
-  //       amountInput.setAttribute('value', amount)
-
-  //       const categorySelect = document.getElementById('category') as HTMLSelectElement
-  //       categorySelect.value = category
-  //     }
-  //   }
-  // }, [editingExpense])
-
   // vamos a validar y obtener los datos del formulario
   const handleSubmitAdd = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    // const { id, date } = editingExpense!
 
     const form = event.target as HTMLFormElement
     const formData = new FormData(form)

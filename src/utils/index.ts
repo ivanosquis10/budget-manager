@@ -1,4 +1,3 @@
-// funcion que formatea el presupuesto
 export const formatMoney = (cantidad: number | string) => {
   return cantidad.toLocaleString('en-US', {
     style: 'currency',

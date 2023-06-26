@@ -1,6 +1,5 @@
 import { createContext } from 'react'
-import { NewBudgetInt } from '../interfaces'
-import { CategoriesExpenses, ExpensesType, LinksNavType } from '.'
+import type { CategoriesExpenses, ExpensesType, LinksNavType, NewBudgetInt } from '../interfaces'
 
 interface BudgetContextProps {
   budget: NewBudgetInt
