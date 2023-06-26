@@ -10,7 +10,7 @@ export const ExpenseDashboard = () => {
   const { budget, menuOpen } = useControl()
   const { spent, available } = useBudget()
   return (
-    <section className='h-screen w-full grid grid-cols-6'>
+    <main className='h-screen w-full grid grid-cols-6'>
 
       {/* <AsideNavbar /> */}
       <aside className='hidden bg-shark-950 px-2 py-5 lg:block lg:col-span-1'>
@@ -60,6 +60,6 @@ export const ExpenseDashboard = () => {
         </section>
 
       </div>
-    </section>
+    </main>
   )
 }

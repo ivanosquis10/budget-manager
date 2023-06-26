@@ -61,10 +61,10 @@ export const ControlProvider: FC<Props> = ({ children }) => {
   const [filterExpenses, setFilterExpenses] = useState<ExpensesType[]>([])
 
   const [isValidBudget, setIsValidBudget] = useState(false)
-  const [isEdit, setIsEdit] = useState(false)
   const [modal, setModal] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const [isEdit, setIsEdit] = useState(false)
   const [editingExpense, setEditingExpense] = useState<ExpensesType | null>({
     id: '',
     name: '',
@@ -117,11 +117,18 @@ export const ControlProvider: FC<Props> = ({ children }) => {
 
   const addExpenses = (expense: ExpensesType) => {
     // validamos si ya hay un valor en el array
-    // if (expense.id !== '') {
-    //   const updatedExpenses = expenses.map(exp => exp.id === expense.id ? expense : exp)
-    //   setExpenses(updatedExpenses)
-    //   return setEditingExpense({ id: '', name: '', amount: '', category: '', date: 0 })
-    // }
+    if (isEdit) {
+      const updatedExpenses = expenses.map(existingExp => {
+        if (existingExp.id === editingExpense?.id) {
+          return {
+            ...existingExp, ...expense
+          }
+        }
+        return existingExp
+      })
+      setExpenses(updatedExpenses)
+      return setIsEdit(false)
+    }
 
     const newExpense: ExpensesType = {
       id: crypto.randomUUID(),
