@@ -10,7 +10,7 @@ export const Header = () => {
 
         <div className='hidden mr-4 md:flex md:flex-1 md:items-center md:justify-start md:gap-x-10'>
           <a className='flex items-center space-x-2' href='/'>
-            <span className='hidden text-xl font-bold sm:inline-block'>SPENDkool</span>
+            <span className='hidden text-xl font-bold sm:inline-block'>SpendCool</span>
           </a>
           {/* <nav className='flex items-center space-x-6 text-sm font-medium'>
             <a
@@ -31,7 +31,7 @@ export const Header = () => {
             <a
               target='_blank'
               rel='noreferrer'
-              href='https://github.com/shadcn-ui/ui'
+              href='https://github.com/ivanosquis10/budget-manager'
             >
               <div className='inline-flex items-center justify-center px-0 py-2 text-sm font-medium transition-colors rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 w-9'>
                 <svg viewBox='0 0 438.549 438.549' className='w-4 h-4 md:w-5 md:h-5'>
@@ -43,7 +43,7 @@ export const Header = () => {
                 <span className='sr-only'>GitHub</span>
               </div>
             </a>
-            <a target='_blank' rel='noreferrer' href='https://twitter.com/shadcn'>
+            <a target='_blank' rel='noreferrer' href='https://twitter.com/ivanosquis13'>
               <div className='inline-flex items-center justify-center px-0 py-2 text-sm font-medium transition-colors rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 w-9'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'

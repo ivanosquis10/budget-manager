@@ -12,3 +12,5 @@ export * from './SumaryCard/SumaryCard'
 
 export * from './ThemeProvider'
 export * from './UserAvatar/UserAvatar'
+
+export * from './Footer/Footer'
