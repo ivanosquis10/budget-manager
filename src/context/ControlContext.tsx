@@ -23,6 +23,7 @@ interface BudgetContextProps {
   filterExpensesByCategory: (category: CategoriesExpenses) => void
   handleMenuToggle: () => void
   resetApp: () => void
+  handleModal: () => void
 }
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

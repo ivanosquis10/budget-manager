@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react'
+import { FC, ReactNode, useCallback, useEffect, useState } from 'react'
 import { ControlContext } from './ControlContext'
 import type { NewBudgetInt, ExpensesType, LinksNavType, CategoriesExpenses } from '../interfaces'
 
@@ -8,27 +8,27 @@ interface Props {
 
 const linksNav: LinksNavType[] = [
   {
-    id: crypto.randomUUID(),
+    id: 1,
     name: 'Dashboard',
     icon: 'dashboard.svg'
   },
   {
-    id: crypto.randomUUID(),
+    id: 2,
     name: 'Wallet',
     icon: 'wallet.svg'
   },
   {
-    id: crypto.randomUUID(),
+    id: 3,
     name: 'Analytics',
     icon: 'analytics.svg'
   },
   {
-    id: crypto.randomUUID(),
+    id: 4,
     name: 'Personal',
     icon: 'personal.svg'
   },
   {
-    id: crypto.randomUUID(),
+    id: 5,
     name: 'Settings',
     icon: 'settings.svg'
   }
@@ -50,13 +50,15 @@ export const ControlProvider: FC<Props> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const [isEdit, setIsEdit] = useState(false)
-  const [editingExpense, setEditingExpense] = useState<ExpensesType | null>({
-    id: '',
-    name: '',
-    amount: 0,
-    category: '',
-    date: 0
-  })
+  const [editingExpense, setEditingExpense] = useState<ExpensesType>(
+    {
+      id: '',
+      name: '',
+      amount: 0,
+      category: '',
+      date: 0
+    }
+  )
 
   // encarcado de ver si hay algo en el objeti de editar para abrir el modal
   useEffect(() => {
@@ -86,14 +88,15 @@ export const ControlProvider: FC<Props> = ({ children }) => {
 
   // encargada de filtrar por categoria
   useEffect(() => {
-    if (filter !== 'all') {
-      const expensesFiltred = expenses.filter(
+    if (filter === 'all') {
+      setFilterExpenses(expenses)
+    } else {
+      const filteredExpenses = expenses.filter(
         expense => expense.category === filter
       )
-      setFilterExpenses(expensesFiltred)
+      setFilterExpenses(filteredExpenses)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter])
+  }, [filter, expenses])
 
   const addBudget = (newBudget: NewBudgetInt) => {
     setBudget(newBudget)
@@ -120,6 +123,7 @@ export const ControlProvider: FC<Props> = ({ children }) => {
       date: Date.now(),
       ...expense
     }
+
     setExpenses(prevExpenses => [...prevExpenses, newExpense])
   }
 
@@ -128,13 +132,18 @@ export const ControlProvider: FC<Props> = ({ children }) => {
   }
 
   const deleteExpense = (id?: string) => {
+    const areYouSure = confirm('Are you sure you want to delete this expense?')
+    if (!areYouSure) {
+      return
+    }
+
     const updateExpenses = expenses.filter(expense => expense.id !== id)
     setExpenses(updateExpenses)
   }
 
-  const filterExpensesByCategory = (category: CategoriesExpenses) => {
+  const filterExpensesByCategory = useCallback((category: CategoriesExpenses) => {
     setFilter(category)
-  }
+  }, [])
 
   const handleCloseModal = () => {
     setModal(false)
@@ -153,8 +162,20 @@ export const ControlProvider: FC<Props> = ({ children }) => {
     setMenuOpen(false)
   }
 
+  const handleModal = () => {
+    setModal(!modal)
+  }
+
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen)
+    setIsEdit(false)
+    setEditingExpense({
+      id: '',
+      name: '',
+      amount: 0,
+      category: '',
+      date: 0
+    })
   }
 
   const resetApp = () => {
@@ -189,7 +210,8 @@ export const ControlProvider: FC<Props> = ({ children }) => {
       editExpense,
       filterExpensesByCategory,
       handleMenuToggle,
-      resetApp
+      resetApp,
+      handleModal
     }}
     >
       {children}

@@ -1,10 +1,13 @@
 import { createRoot } from 'react-dom/client'
-import { App } from './App.tsx'
 import { ControlProvider } from './context'
+import { ThemeProvider } from './components'
+import { App } from './App.tsx'
 import './index.css'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
-  <ControlProvider>
-    <App />
-  </ControlProvider>
+  <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+    <ControlProvider>
+      <App />
+    </ControlProvider>
+  </ThemeProvider>
 )

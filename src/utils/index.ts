@@ -1,3 +1,5 @@
+import { Categories } from '../constans'
+
 export const formatMoney = (cantidad: number | string) => {
   return cantidad.toLocaleString('en-US', {
     style: 'currency',
@@ -10,7 +12,6 @@ export const formatDate = (date?: number): string => {
 
   const newDate = new Date(date)
   const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
     month: 'short',
     day: '2-digit'
   }
@@ -18,4 +19,10 @@ export const formatDate = (date?: number): string => {
   const lenguage = 'en-EN'
 
   return newDate.toLocaleDateString(lenguage, options)
+}
+
+export const colorCategory = (category: string): string => {
+    const categories = Categories.filter(({ value }) => value === category)
+    const result = categories[0].color
+    return result
 }

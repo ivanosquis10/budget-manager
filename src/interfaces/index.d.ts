@@ -6,7 +6,7 @@ export interface NewBudgetInt {
 export type CategoriesExpenses = 'all' | 'savings' | 'food' | 'house' | 'expenses' | 'entertainment' | 'health' | 'subscriptions'
 
 export interface LinksNavType {
-  id: string
+  id: string | number
   name: string
   icon: string
 }

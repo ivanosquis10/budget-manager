@@ -1,13 +1,12 @@
-import { useControl } from './hooks'
-import { ModalExpense } from './components'
-import { BudgetController } from './components/BudgetController'
+import { useControl } from './hooks/useControl'
+import { Header, NewBudget, BudgetController } from './components'
 
 export const App = () => {
-  const { modal } = useControl()
+  const { isValidBudget } = useControl()
   return (
     <main>
-      <BudgetController />
-      {modal && <ModalExpense />}
+      <Header />
+      {isValidBudget ? <BudgetController /> : <NewBudget />}
     </main>
   )
 }
